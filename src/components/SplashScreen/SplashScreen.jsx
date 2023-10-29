@@ -26,6 +26,7 @@ const SplashScreen = () => {
   return (
     <>
       <div className="splash-screen" ref={splashScreenRef}>
+      <div className="word-wrapper">
         <div className="upper">
           <span className="text">P</span>
           <span className="text">U</span>
@@ -39,6 +40,7 @@ const SplashScreen = () => {
           <span className="text">O</span>
           <span className="text">O</span>
           <span className="text">K</span>
+        </div>
         </div>
       </div>
       <PurpleBookLogin />
