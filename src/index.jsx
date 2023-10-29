@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import RouteDispatcher from "./RouteDispatcher";
+import RouteDispatcher from "./route/RouteDispatcher";
 import "./index.less";
 
 const root = document.getElementById("root");

@@ -1,10 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import SplashScreen from "./components/SplashScreen/SplashScreen";
-import PurpleBookMainPage from "./components/PurpleBookMainPage/PurpleBookMainPage";
+import SplashScreen from "../components/SplashScreen/SplashScreen";
+import PurpleBookMainPage from "../components/PurpleBookMainPage/PurpleBookMainPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 const RouteDispatcher = () => {
-  const isUserLoggedIn = () => false;
-  
+  const isUserLoggedIn = () => {
+    return false;
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -19,7 +22,10 @@ const RouteDispatcher = () => {
           }
         />
         <Route path="/login" element={<SplashScreen />} />
-        <Route path="/home" element={<PurpleBookMainPage />} />
+        <Route
+          path="/home"
+          element={<ProtectedRoute component={PurpleBookMainPage} />}
+        />
       </Routes>
     </BrowserRouter>
   );
