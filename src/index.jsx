@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import RouteDispatcher from "./RouteDispatcher";
+import "./index.less";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = document.getElementById("root");
+const appRoot = ReactDOM.createRoot(root);
 
-root.render(
+appRoot.render(
   <React.StrictMode>
-    <App />
+    <RouteDispatcher />
   </React.StrictMode>
 );
