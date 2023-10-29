@@ -100,11 +100,17 @@ const PurpleBookLogin = () => {
               <Typography>English</Typography>
             </AccordionSummary>
             <AccordionDetails className="login-multilingual-accrodin-content">
-              <Button className="login-multilingual-accrodin-button">
+              <Button
+                className="login-multilingual-accrodin-button"
+                disableRipple
+              >
                 English
                 <span className={`active`}>X</span>
               </Button>
-              <Button className="login-multilingual-accrodin-button">
+              <Button
+                className="login-multilingual-accrodin-button"
+                disableRipple
+              >
                 Chinese
                 <span className={``}></span>
               </Button>
@@ -212,7 +218,9 @@ const PurpleBookLogin = () => {
           </span>
           <span className="login-bottom-lower-text">
             you can{" "}
-            <Button className="login-register-button">Register here!</Button>
+            <Button className="login-register-button" disableRipple>
+              Register here!
+            </Button>
           </span>
         </div>
       </section>
