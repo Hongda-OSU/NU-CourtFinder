@@ -5,6 +5,9 @@ import SplashScreen from "../components/SplashScreen/SplashScreen";
 import PurpleBookMainPage from "../components/PurpleBookMainPage/PurpleBookMainPage";
 import ProtectedRoute from "./ProtectedRoute";
 
+import UserProfile from "../components/PurpleBookUserProfile/UserProfile";
+import sampleData from '../components/PurpleBookUserProfile/UserProfileTest.json';
+
 const RouteDispatcher = () => {
   const [user] = useAuthState();
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(user != null);
