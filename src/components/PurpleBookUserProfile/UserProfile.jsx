@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import "./UserProfile.less";
 
 const UpcomingBookings = ({ user, data }) => {
   const name = user.displayName;

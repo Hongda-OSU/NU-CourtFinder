@@ -1,8 +1,9 @@
-import Dropdown from "react-bootstrap/Dropdown";
 import { firebaseSignOut, useProfile } from "../../utilities/firebaseUtils";
 import { useState } from "react";
-import data from "../../utilities/temp.json";
 import { useNavigate } from "react-router-dom";
+import Dropdown from "react-bootstrap/Dropdown";
+import data from "../../utilities/temp.json";
+import "./PurpleBookMainPage.less";
 
 const PurpleBookMainPage = ({ setIsUserLoggedIn }) => {
   const handleFirebaseLogout = () => {
@@ -65,7 +66,7 @@ const PurpleBookMainPage = ({ setIsUserLoggedIn }) => {
       ) : (
         <button onClick={handleButtonClick}>Go to selected court</button>
       )}
-      
+
       <button onClick={handleFirebaseLogout}>Sign Out</button>
     </div>
   );
