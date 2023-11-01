@@ -41,6 +41,7 @@ const RouteDispatcher = () => {
           }
         />
         <Route path="/place/:courtId" element={<CourtPage />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );
