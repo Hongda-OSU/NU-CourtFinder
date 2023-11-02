@@ -4,9 +4,8 @@ import { useAuthState } from "../utilities/firebaseUtils";
 import SplashScreen from "../components/SplashScreen/SplashScreen";
 import PurpleBookMainPage from "../components/PurpleBookMainPage/PurpleBookMainPage";
 import CourtPage from "../components/CourtPage/CourtPage";
-import ProtectedRoute from "./ProtectedRoute";
-
 import UserProfile from "../components/PurpleBookUserProfile/UserProfile";
+import ProtectedRoute from "./ProtectedRoute";
 import sampleData from '../components/PurpleBookUserProfile/UserProfileTest.json';
 
 const RouteDispatcher = () => {
