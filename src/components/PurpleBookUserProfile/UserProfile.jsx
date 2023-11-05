@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import "./UserProfile.less";
+import PurpleBookButtomNav from "../PurpleBookButtomNav/PurpleBookButtomNav";
 //import data from "../../utilities/temp.json"; 
 import data2 from "./UserProfileTest.json";
 
-const UpcomingBookings = ({user, data }) => {
+const UpcomingBookings = (user) => {
   const bookings = data2.bookings;
+  console.log(bookings);
+  console.log(user);
   const userBookings = bookings.filter((booking) => booking.name === user);
   return userBookings;
 };
 
 const UserProfile = ({reservations}) => {
-  const userName =  data2.user.name;
-  const upcomingBookings = UpcomingBookings({ userName, data2 });
-
+  const userName =  data2.user.displayName;
+  const upcomingBookings = UpcomingBookings( userName);
+  console.log(upcomingBookings);
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -58,13 +61,16 @@ const UserProfile = ({reservations}) => {
   };
 
   return (
+    <div className="background-container">
     <div className="profile-container">
       <div className="user-info">
         <h2>User Profile</h2>
-        <div>
+        <br />
+        <div className="top-text">
           <strong>Name: {data2.user.name}</strong>
         </div>
-        <div>
+        <br />
+        <div className="top-text">
           <strong>Email: {data2.user.email}</strong>
         </div>
         {/* more information?? */}
@@ -76,6 +82,7 @@ const UserProfile = ({reservations}) => {
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Booking Actions"
+            className="ReactModal__Content"
           >
             <h2>How would you like to proceed?</h2>
             <div>
@@ -97,14 +104,31 @@ const UserProfile = ({reservations}) => {
             {upcomingBookings.map((booking) => (
               <li key={booking.id}>
                 <strong>Court: {booking.courtName}</strong>
+                <br />
                 <strong>Location: {booking.location}</strong>
                 <br />
                 <strong>Date: {booking.date}</strong>
                 <br />
                 <strong>Time: {booking.time}</strong>
                 <br />
-                <button onClick={() => handleBooking(booking)}>...</button>
-                {selectedBooking && selectedBooking.id === booking.id && (
+                <div className="button-cont">
+                <button className="handle-book" onClick={() => handleBooking(booking)}> Edit</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No upcoming reservations...</p>
+        )}
+      </div>
+    </div>
+    <PurpleBookButtomNav />
+    </div>
+  );
+};
+
+export default UserProfile;
+/*{selectedBooking && selectedBooking.id === booking.id && (
                   <div>
                     {selectedBooking ? (
                       <div>
@@ -126,16 +150,4 @@ const UserProfile = ({reservations}) => {
                       </div>
                     ) : null}
                   </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No upcoming reservations...</p>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default UserProfile;
+                )}*/
