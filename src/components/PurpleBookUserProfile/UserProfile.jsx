@@ -10,7 +10,7 @@ const UpcomingBookings = ({user, data }) => {
   return userBookings;
 };
 
-const UserProfile = ({ }) => {
+const UserProfile = ({reservations}) => {
   const userName =  data2.user.name;
   const upcomingBookings = UpcomingBookings({ userName, data2 });
 
