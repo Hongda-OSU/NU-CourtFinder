@@ -123,13 +123,13 @@ const UserProfile = ({setIsUserLoggedIn}) => {
           <ul className>
             {upcomingBookings.map((booking) => (
               <li key={booking.id}>
-                <strong>Court: {booking.courtName}</strong>
+                Court: <strong>{booking.courtName}</strong>
                 <br />
-                <strong>Location: {booking.location}</strong>
+                Location: <strong>{booking.location}</strong>
                 <br />
-                <strong>Date: {booking.date}</strong>
+                Date: <strong>{booking.date}</strong>
                 <br />
-                <strong>Time: {booking.time}</strong>
+                Time: <strong>{booking.time}</strong>
                 <br />
                 <div className="button-cont">
                 <button className="handle-book" onClick={() => handleBooking(booking)}> Edit</button>
