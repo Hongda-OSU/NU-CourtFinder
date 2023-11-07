@@ -4,10 +4,9 @@ import { useAuthState } from "../utilities/firebaseUtils";
 import SplashScreen from "../components/SplashScreen/SplashScreen";
 import PurpleBookMainPage from "../components/PurpleBookMainPage/PurpleBookMainPage";
 import PurpleBookMap from "../components/PurpleBookMap/PurpleBookMap";
-import CourtPage from "../components/CourtPage/CourtPage";
 import UserProfile from "../components/PurpleBookUserProfile/UserProfile";
 import ProtectedRoute from "./ProtectedRoute";
-import sampleData from "../components/PurpleBookUserProfile/UserProfileTest.json";
+import BasicDateCalendar from "../components/Calendar/Calendar";
 
 const RouteDispatcher = () => {
   const [user] = useAuthState();
@@ -49,8 +48,17 @@ const RouteDispatcher = () => {
             />
           }
         />
-        <Route path="/place/:courtId" element={<CourtPage />} />
-        <Route path="/profile" element={<UserProfile setIsUserLoggedIn={setIsUserLoggedIn}/>} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute
+              isUserLoggedIn={isUserLoggedIn}
+              setIsUserLoggedIn={setIsUserLoggedIn}
+              component={UserProfile}
+            />
+          }
+        />
+        <Route path="/place/:courtId" element={<BasicDateCalendar />} />
       </Routes>
     </BrowserRouter>
   );

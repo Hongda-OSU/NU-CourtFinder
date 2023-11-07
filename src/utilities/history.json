@@ -1,0 +1,46 @@
+{
+  "history": {
+    "Adrian H": {
+      "email": "adrianhoffer2024@u.northwestern.edu",
+      "name": "Adrian H",
+      "booking": [
+        {
+          "courtName": "Court A",
+          "location": "Location X",
+          "date": "2023-11-01",
+          "time": "10:00 AM-11:00 AM"
+        },
+        {
+          "courtName": "Court B",
+          "location": "Location Y",
+          "date": "2023-11-03",
+          "time": "2:00 PM-3:00 PM"
+        },
+        {
+          "courtName": "Court C",
+          "location": "Location Z",
+          "date": "2023-11-05",
+          "time": "3:30 PM-4:30 PM"
+        },
+        {
+          "courtName": "Court D",
+          "location": "Location W",
+          "date": "2023-11-07",
+          "time": "1:00 PM-2:00 PM"
+        },
+        {
+          "courtName": "Court E",
+          "location": "Location V",
+          "date": "2023-11-09",
+          "time": "11:30 AM-12:30 PM"
+        },
+        {
+          "courtName": "Court F",
+          "location": "Location U",
+          "date": "2023-11-12",
+          "time": "9:00 AM-10:00 AM"
+        }
+      ]
+    }
+  }
+}
