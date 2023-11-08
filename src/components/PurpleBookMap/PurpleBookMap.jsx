@@ -212,6 +212,7 @@ const PurpleBookMap = () => {
   const [courts, setCourts] = useState([]);
   const [startLocation, setStartLocation] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [destinationAddress, setDestinationAddress] = useState(null);
   const [myLocation, setMyLocation] = useState(null);
   const [useMyLocation, setUseMyLocation] = useState(false);
   const [triggerLocate, setTriggerLocate] = useState(false);
@@ -231,13 +232,14 @@ const PurpleBookMap = () => {
     setUseNULocation(e.target.checked);
   };
 
-  const handleRoute = (useLocation, start, end) => {
+  const handleRoute = (useLocation, start, end, address) => {
     if (!useLocation || !start || !end) {
       alert('You need to have "Use My Location" or "Use NU Location" enable.');
       return;
     }
     setStartLocation(start);
     setDestination(end);
+    setDestinationAddress(address);
   };
 
   useEffect(() => {
@@ -322,10 +324,15 @@ const PurpleBookMap = () => {
     const instructions = routeInfo[0]["instructions"];
     const totalDistance = routeInfo[0]["summary"]["totalDistance"];
     const totalTime = routeInfo[0]["summary"]["totalTime"];
+    const start = routeInfo[0]["name"];
 
     return (
       <div className="route-info-tooltip">
         <div className="route-info-tooltip-title">Route Information</div>
+        <div className="route-info-tooltip-start">Start Location: {start}</div>
+        <div className="route-info-tooltip-end">
+          Destination: {destinationAddress}
+        </div>
         <div className="route-info-tooltip-total-distance">
           Total Distance: {totalDistance} meters
         </div>
@@ -550,7 +557,8 @@ const PurpleBookMap = () => {
                             handleRoute(
                               useMyLocation,
                               myLocation,
-                              court.location
+                              court.location,
+                              court.address
                             )
                           }
                         >
@@ -568,7 +576,8 @@ const PurpleBookMap = () => {
                             handleRoute(
                               useNULocation,
                               nuLocation,
-                              court.location
+                              court.location,
+                              court.address
                             )
                           }
                         >
