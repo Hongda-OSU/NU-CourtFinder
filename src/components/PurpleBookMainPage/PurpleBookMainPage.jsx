@@ -16,7 +16,6 @@ const PurpleBookMainPage = ({ setIsUserLoggedIn }) => {
       console.error(error);
     }
   }, [data, error]);
-
   const handleFirebaseLogout = () => {
     setIsUserLoggedIn(false);
     firebaseSignOut();
