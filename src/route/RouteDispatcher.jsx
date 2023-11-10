@@ -33,7 +33,6 @@ const RouteDispatcher = () => {
           element={
             <ProtectedRoute
               isUserLoggedIn={isUserLoggedIn}
-              setIsUserLoggedIn={setIsUserLoggedIn}
               component={PurpleBookMainPage}
             />
           }
