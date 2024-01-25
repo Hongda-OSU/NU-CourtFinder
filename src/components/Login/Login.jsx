@@ -14,9 +14,9 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import "./PurpleBookLogin.less";
+import "./Login.less";
 
-const PurpleBookLogin = ({setIsUserLoggedIn}) => {
+const Login = ({setIsUserLoggedIn}) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -98,7 +98,7 @@ const PurpleBookLogin = ({setIsUserLoggedIn}) => {
   useEffect(() => {
     if (user) {
       setIsUserLoggedIn(true)
-      navigate("/home");
+      navigate("/map");
     }
   }, [user, navigate]);
 
@@ -140,8 +140,7 @@ const PurpleBookLogin = ({setIsUserLoggedIn}) => {
         {/* header text */}
         <div className="login-header-container">
           <section className="login-header-text-container">
-            <p className="login-header-text purple">Purple</p>
-            <p className="login-header-text">Book</p>{" "}
+            <p className="login-header-text">Find NU</p>{" "}
             <span className="typing-text" ref={typingRef}></span>
             <p className="login-header-text">Court</p>
           </section>
@@ -244,4 +243,4 @@ const PurpleBookLogin = ({setIsUserLoggedIn}) => {
   );
 };
 
-export default PurpleBookLogin;
+export default Login;

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import PurpleBookButtomNav from "../PurpleBookButtomNav/PurpleBookButtomNav";
+import ButtomNav from "../ButtomNav/ButtomNav";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -13,7 +13,7 @@ import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet/dist/leaflet.css";
 import mapData from "../../utilities/mapData.json";
-import "./PurpleBookMap.less";
+import "./Map.less";
 
 const basketballIcon = new L.Icon({
   iconUrl:
@@ -203,7 +203,7 @@ const RoutingMachine = ({ startLocation, destination, setRouteInfo }) => {
   return null;
 };
 
-const PurpleBookMap = () => {
+const Map = () => {
   const defaultLocation = [42.056602684890095, -87.6752777471743];
   const nuLocation = [42.05663455962621, -87.67518118493001];
   const mapRef = useRef(null);
@@ -382,7 +382,7 @@ const PurpleBookMap = () => {
         {/* display sidebar */}
         <section className="map-container-sidebar">
           <div className="sidebar-title-container">
-            <p className="sidebar-title">Find My Court</p>
+            <p className="sidebar-title">NU Sport Map</p>
           </div>
           <div className="sidebar-filter-container">
             <Accordion
@@ -616,9 +616,9 @@ const PurpleBookMap = () => {
           </MapContainer>
         </section>
       </section>
-      <PurpleBookButtomNav />
+      <ButtomNav />
     </div>
   );
 };
 
-export default PurpleBookMap;
+export default Map;

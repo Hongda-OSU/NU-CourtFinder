@@ -1,18 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import "./PurpleBookButtomNav.less";
+import "./ButtomNav.less";
 
-const PurpleBookButtomNav = () => {
+const ButtomNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isHome = location.pathname === "/home";
   const isMap = location.pathname === "/map";
   const isProfile = location.pathname === "/profile";
-
-  const handleHomeClick = () => {
-    if (!isHome) {
-      navigate("/home");
-    }
-  };
 
   const handleMapClick = () => {
     if (!isMap) {
@@ -28,16 +21,6 @@ const PurpleBookButtomNav = () => {
 
   return (
     <div className="bottom-nav">
-      <div className="bottom-nav-home">
-        <img
-          className="bottom-nav-home-icon"
-          src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imghome-1-svgrepo-com%20(1).svg"
-          onClick={handleHomeClick}
-        />
-        <span className="bottom-nav-home-text" onClick={handleHomeClick}>
-          Home
-        </span>
-      </div>
       <div className="bottom-nav-map">
         <img
           className="bottom-nav-map-icon"
@@ -62,4 +45,4 @@ const PurpleBookButtomNav = () => {
   );
 };
 
-export default PurpleBookButtomNav;
+export default ButtomNav;

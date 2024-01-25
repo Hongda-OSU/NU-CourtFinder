@@ -1,6 +1,6 @@
-import "./PurpleBookHeader.less";
+import "./Header.less";
 
-const PurpleBookHeader = () => {
+const Header = () => {
   return (
     <div className="purple-book-header">
       <p className="purple-book-header-title">
@@ -12,4 +12,4 @@ const PurpleBookHeader = () => {
   );
 };
 
-export default PurpleBookHeader;
+export default Header;

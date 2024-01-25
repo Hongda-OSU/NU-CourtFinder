@@ -2,11 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuthState } from "../utilities/firebaseUtils";
 import SplashScreen from "../components/SplashScreen/SplashScreen";
-import PurpleBookMainPage from "../components/PurpleBookMainPage/PurpleBookMainPage";
-import PurpleBookMap from "../components/PurpleBookMap/PurpleBookMap";
-import UserProfile from "../components/PurpleBookUserProfile/UserProfile";
+import Map from "../components/Map/Map";
+import UserProfile from "../components/UserProfile/UserProfile";
 import ProtectedRoute from "./ProtectedRoute";
-import BasicDateCalendar from "../components/Calendar/Calendar";
 
 const RouteDispatcher = () => {
   const [user] = useAuthState();
@@ -18,7 +16,7 @@ const RouteDispatcher = () => {
           path="/"
           element={
             isUserLoggedIn ? (
-              <Navigate replace to="/home" />
+              <Navigate replace to="/map" />
             ) : (
               <Navigate replace to="/login" />
             )
@@ -29,20 +27,11 @@ const RouteDispatcher = () => {
           element={<SplashScreen setIsUserLoggedIn={setIsUserLoggedIn} />}
         />
         <Route
-          path="/home"
-          element={
-            <ProtectedRoute
-              isUserLoggedIn={isUserLoggedIn}
-              component={PurpleBookMainPage}
-            />
-          }
-        />
-        <Route
           path="/map"
           element={
             <ProtectedRoute
               isUserLoggedIn={isUserLoggedIn}
-              component={PurpleBookMap}
+              component={Map}
             />
           }
         />
@@ -57,7 +46,6 @@ const RouteDispatcher = () => {
             />
           }
         />
-        <Route path="/place/:courtId" element={<BasicDateCalendar />} />
       </Routes>
     </BrowserRouter>
   );
