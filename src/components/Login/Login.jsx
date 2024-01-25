@@ -212,18 +212,6 @@ const Login = ({setIsUserLoggedIn}) => {
                 className="login-google-icon"
               ></img>
             </Button>
-            <Button variant="contained" className="login-apple-sign-in-button" onClick={signInWithApple}>
-              <img
-                src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgApple.svg"
-                className="login-apple-icon" 
-              ></img>
-            </Button>
-            <Button variant="contained" className="login-github-sign-in-button" onClick={signInWithGitHub}>
-              <img
-                src="https://raw.githubusercontent.com/Hongda-OSU/PicGo-2.3.1/master/imgGithub.svg"
-                className="login-github-icon"
-              ></img>
-            </Button>
           </div>
         </div>
 

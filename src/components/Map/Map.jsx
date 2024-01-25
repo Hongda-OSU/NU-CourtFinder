@@ -382,7 +382,7 @@ const Map = () => {
         {/* display sidebar */}
         <section className="map-container-sidebar">
           <div className="sidebar-title-container">
-            <p className="sidebar-title">NU Sport Map</p>
+            <p className="sidebar-title">Find Your Court</p>
           </div>
           <div className="sidebar-filter-container">
             <Accordion
